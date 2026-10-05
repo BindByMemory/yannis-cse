@@ -1873,3 +1873,206 @@ footer {
   }
 
 }
+
+/* =========================================
+   BEYOND THE CAMPAIGN / PERSONAL PORTFOLIO
+   ========================================= */
+
+.beyond-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.beyond-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  margin-top: 45px;
+}
+
+.beyond-copy {
+  max-width: 620px;
+}
+
+.beyond-copy .eyebrow {
+  margin-bottom: 18px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.beyond-copy h2 {
+  margin: 0 0 25px;
+  font-family: var(--serif);
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.beyond-copy h2 em {
+  color: var(--burgundy);
+  font-style: italic;
+}
+
+.beyond-copy > p:not(.eyebrow) {
+  max-width: 520px;
+  margin: 0 0 30px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.portfolio-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  padding: 15px 20px;
+  border: 1px solid var(--burgundy);
+  color: var(--burgundy);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.portfolio-button:hover {
+  background: var(--burgundy);
+  color: var(--paper);
+  transform: translateY(-3px);
+}
+
+
+/* Portfolio preview card */
+
+.portfolio-card {
+  position: relative;
+  min-height: 360px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(116, 83, 140, 0.16),
+      transparent 35%
+    ),
+    var(--cream);
+
+  border: 1px solid rgba(60, 35, 45, 0.18);
+  color: var(--ink);
+  text-decoration: none;
+
+  box-shadow: 8px 8px 0 var(--wheat);
+
+  transform: rotate(1.2deg);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: rotate(0deg) translateY(-6px);
+  box-shadow: 14px 14px 0 var(--wheat);
+}
+
+.portfolio-card::before {
+  content: "PERSONAL";
+  position: absolute;
+  top: 75px;
+  right: -35px;
+
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+
+  padding: 7px 45px;
+  background: var(--burgundy);
+  color: var(--paper);
+
+  transform: rotate(45deg);
+}
+
+.portfolio-card-top,
+.portfolio-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portfolio-card-top {
+  color: var(--muted);
+}
+
+.portfolio-card-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.portfolio-card-title span {
+  font-family: var(--serif);
+  font-size: clamp(58px, 7vw, 100px);
+  font-style: italic;
+  line-height: 0.75;
+  color: var(--burgundy);
+}
+
+.portfolio-card-title strong {
+  margin-left: 35px;
+  font-family: var(--serif);
+  font-size: clamp(35px, 4vw, 60px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.portfolio-card-bottom {
+  color: var(--muted);
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+  .beyond-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .beyond-copy h2 {
+    font-size: clamp(42px, 13vw, 65px);
+  }
+
+  .portfolio-card {
+    min-height: 300px;
+  }
+
+  .portfolio-card-title span {
+    font-size: 70px;
+  }
+
+  .portfolio-card-title strong {
+    font-size: 42px;
+  }
+
+  .portfolio-card-bottom {
+    flex-direction: column;
+    gap: 7px;
+  }
+}
